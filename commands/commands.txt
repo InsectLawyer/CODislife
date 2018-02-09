@@ -34,3 +34,4 @@ commands
 commands
 despite
 rage
+newcommand

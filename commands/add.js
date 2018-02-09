@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
    var content = "exports.run = (client, message, args) => {\n" + 
          "    message.channel.send(\"" + response +
          "\").catch(console.error);\n" + "}";
-   var js = "B:\\devel\\cod\\commands\\" + filename + ".js";
+   var js = "./commands/" + filename + ".js";
    fs.writeFile(js, content, (err) => { 
       if (err) {
          message.channel.send("Error: Bad Input");
@@ -21,7 +21,7 @@ exports.run = (client, message, args) => {
       message.channel.send("Saved command : !" + filename).catch(console.error);
       message.channel.send("Response : " + response).catch(console.error);
       
-      fs.appendFile('B:\\devel\\cod\\commands\\commands.txt', "\n" + filename, function (err) {
+      fs.appendFile('./commands/commands.txt', "\n" + filename, function (err) {
          if (err) throw err;
          console.log('Logged Command');
       });
