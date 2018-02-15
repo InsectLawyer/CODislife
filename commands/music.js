@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
         //const stream = ytdl('https://www.youtube.com/watch?v=wAu_fYHZKLs&list=LLcwy7e-9ADZK7BMxtd8B5AA&index=7', { filter: 'audioonly' });
         //const dispatcher = connection.playStream(stream);
         dispatcher.on('end', () => {
-          voiceChannel.leave();
+          message.member.voiceChannel.leave();
         });
          
       dispatcher.on('error', e => {
