@@ -1,7 +1,7 @@
 exports.run = (client, message, args) => {
    const fs = require('fs');
    var filename = args[0];
-   if (filename === "add" | filename === "commands" | filename === undefined | filename === "music") {
+   if (filename === "add" | filename === "commands" | filename === undefined) {
       message.channel.send("Fuck You John");
       return console.log('Fuckeroni');
    }
