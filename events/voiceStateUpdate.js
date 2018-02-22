@@ -1,4 +1,5 @@
 exports.run = (client, oldMember, newMember) => {
+   // If someone is playing CSGO and enters a voice channel, Assembles crew
    var channel = client.channels.get("187700521912500225");
    if (newMember.voiceChannel) {
       if (newMember.presence.game) {
