@@ -1,21 +1,4 @@
 exports.run = (client, message, args) => {
-    message.channel.send(":b::b::b::b::b::b::b::b::b::b:
-:b::b::b::b::b::b::b::b::b::b::b:
-:b::b::b::b::b::b::b::b::b::b::b::b:
-:b::b::b::b:         :b::b::b::b::b:
-:b::b::b::b:            :b::b::b::b:
-:b::b::b::b:               :b::b::b:
-:b::b::b::b:            :b::b::b::b:
-:b::b::b::b:         :b::b::b::b:
-:b::b::b::b::b::b::b::b::b::b:
-:b::b::b::b::b::b::b::b::b::b::b::b:
-:b::b::b::b::b::b::b::b::b::b::b::b::b:
-:b::b::b::b:            :b::b::b::b::b:
-:b::b::b::b:               :b::b::b::b:
-:b::b::b::b:               :b::b::b::b:
-:b::b::b::b:                  :b::b::b::b:
-:b::b::b::b:               :b::b::b::b::b:
-:b::b::b::b::b::b::b::b::b::b::b::b::b:
-:b::b::b::b::b::b::b::b::b::b::b::b::b:
-:b::b::b::b::b::b::b::b::b::b::b:").catch(console.error);
+    var mes = ":b::b::b::b::b::b::b::b::b::b:\n:b::b::b::b::b::b::b::b::b::b::b:\n:b::b::b::b::b::b::b::b::b::b::b::b:\n:b::b::b::b:               :b::b::b::b::b:\n:b::b::b::b:                  :b::b::b::b:\n:b::b::b::b:                     :b::b::b:\n:b::b::b::b:                  :b::b::b::b:\n:b::b::b::b:               :b::b::b::b:\n:b::b::b::b::b::b::b::b::b::b:\n:b::b::b::b::b::b::b::b::b::b::b::b:\n:b::b::b::b::b::b::b::b::b::b::b::b::b:\n:b::b::b::b:                  :b::b::b::b::b:\n:b::b::b::b:                  :b::b::b::b:\n:b::b::b::b:                     :b::b::b::b:\n:b::b::b::b:                        :b::b::b::b:\n:b::b::b::b:                     :b::b::b::b::b:\n:b::b::b::b::b::b::b::b::b::b::b::b::b:\n:b::b::b::b::b::b::b::b::b::b::b::b::b:\n:b::b::b::b::b::b::b::b::b::b::b:";
+    message.channel.send(mes).catch(console.error);
 }
