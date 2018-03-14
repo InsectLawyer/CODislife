@@ -3,8 +3,14 @@ exports.run = (client, oldMember, newMember) => {
    var channel = client.channels.get("187700521912500225");
    if (newMember.voiceChannel && !newMember.voiceChannel.full) {
       console.log(newMember.voiceChannel);
+      var ppl = channel.members.size;
       if (newMember.presence.game && newMember.presence.game.name === "Counter-Strike Global Offensive") {
-            channel.send('@everyone Assemble the Crew').catch(console.error);
+         var mes = '@everyone Assemble the Crew. ';
+         var limit = newMember.voiceChannel.userLimit;
+         if (limit > 0) {
+            mes += ppl + "/" + limit + " assembled";
+         }
+         channel.send(mes).catch(console.error);
       }
    }
 }
