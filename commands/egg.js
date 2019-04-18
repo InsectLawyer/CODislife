@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
       return Math.floor(Math.random() * Math.floor(max));
    }
    
-   Jimp.read("https://banner2.kisspng.com/20180206/dhe/kisspng-breakfast-egg-nutrition-fried-egg-clipart-5a794980b1bf63.4243229915178981127281.jpg").then(function (jeb) {
+   Jimp.read("https://cdn.clipart.email/b375fb8553df0f29c82c09ce814f47ec_clipart-no-background_958-866.png").then(function (jeb) {
       var attach = message.attachments.array();
       var toRead = args[0];
       if (attach[0] != null) {
