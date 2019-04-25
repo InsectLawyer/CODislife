@@ -1,7 +1,8 @@
 exports.run = (client, oldMember, newMember) => {
    // If someone is playing CSGO and enters a voice channel, Assembles crew
    var channel = client.channels.get("187700521912500225");
-   if (newMember.voiceChannelID.equals('226492992242843649') {
+   var voice = client.channels.get('226492992242843649')
+   if (newMember.voiceChannelID.equals(voice) {
       //console.log(newMember.voiceChannel);
       //var ppl = channel.members.size;
       //if (newMember.presence.game && newMember.presence.game.name === "Counter-Strike Global Offensive") {
