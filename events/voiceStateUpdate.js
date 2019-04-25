@@ -14,6 +14,7 @@ exports.run = (client, oldMember, newMember) => {
          //}
          var mes = "@everyone THERE IS A SITUATION ENTER THE SITUATION ROOM STAT";
          channel.send(mes).catch(console.error);
+         channel.send("I am going to piss my pants").catch(console.error);
       //}
    }
 }
