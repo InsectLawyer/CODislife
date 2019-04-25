@@ -2,6 +2,7 @@ exports.run = (client, oldMember, newMember) => {
    // If someone is playing CSGO and enters a voice channel, Assembles crew
    var channel = client.channels.get("187700521912500225");
    //var voice = client.channels.get('226492992242843649')
+   console.log(newMember.voiceChannel).name;
    if (newMember.voiceChannel.name.equals("The Situation Room") {
       //console.log(newMember.voiceChannel);
       //var ppl = channel.members.size;
