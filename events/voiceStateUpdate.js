@@ -12,7 +12,7 @@ exports.run = (client, oldMember, newMember) => {
          //if (limit > 0) {
          //   mes += ppl + "/" + limit + " assembled";
          //}
-         var mes = '@everyone THERE IS A SITUATION ENTER THE SITUATION ROOM STAT";
+         var mes = "@everyone THERE IS A SITUATION ENTER THE SITUATION ROOM STAT";
          channel.send(mes).catch(console.error);
       //}
    }
