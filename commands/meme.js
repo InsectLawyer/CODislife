@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
         let filename = "MyMeme" + getRandomInt(1000) + ".png";
         let height = image.bitmap.height;
         let width = image.bitmap.width;
-        width = Math.max(width, Jimp.measureText(Jimp.FONT_SANS_128_WHITE, 'TEST MESSAGE'));
+        width = Math.max(width, 750);
 
 
 
