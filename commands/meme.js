@@ -15,12 +15,12 @@ exports.run = (client, message, args) => {
 
     Jimp.read(toRead).then(function (image) {
         let filename = "MyMeme" + getRandomInt(1000) + ".png";
-        let height = image.bitmap.height;
+        let height = image.bitmap.height + 300;
         let width = image.bitmap.width;
         if (width < 750) width = 750;
 
         console.log("success preedit");
-        let newImage = new Jimp(height + 300, width, '#000000', (err, image) => {
+        let newImage = new Jimp(height, width, '#000000', function(err, image) {
             if (err) throw err;
         });
 
