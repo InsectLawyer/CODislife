@@ -19,9 +19,9 @@ exports.run = (client, message, args) => {
         let width = image.bitmap.width;
         if (width < 750) width = 750;
 
-        console.log("success preedit")
-        new Jimp(height + 300, width, '#000000', function(err, newImage) {
-            console.log("Made new image")
+        console.log("success preedit");
+        new Jimp(height + 300, width, '#000000').then(function(err, newImage) {
+            console.log("Made new image");
             newImage.composite(image, 0, 150);
             Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(font => {
                 newImage.print(
