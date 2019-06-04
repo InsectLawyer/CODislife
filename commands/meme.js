@@ -20,7 +20,7 @@ exports.run = (client, message, args) => {
         if (width < 750) width = 750;
 
         console.log("success preedit");
-        new Jimp(height, width, '#000000').then(newImage => {
+        new Jimp(height, width, "#000000").then(newImage => {
             console.log("Made new image");
             newImage.composite(image, 0, 150);
             Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(font => {
