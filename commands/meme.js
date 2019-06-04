@@ -20,7 +20,8 @@ exports.run = (client, message, args) => {
         if (width < 750) width = 750;
 
         console.log("success preedit");
-        let newImage = new Jimp(height, width, '#000000', function(err, image) {
+        let newImage = new Jimp(height, width, '#000000', function(err) {
+            if (err) console.log(err);
             if (err) throw err;
         });
 
