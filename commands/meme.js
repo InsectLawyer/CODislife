@@ -21,7 +21,7 @@ exports.run = (client, message, args) => {
         image.resize(width, height + 300);
         console.log(Jimp.FONT_SANS_64_WHITE);
 
-        Jimp.loadFont("../node_modules/jimp/fonts/open-sans/open-sans-64-white/open-sans-64-white.fnt").then(font => {
+        Jimp.loadFont(Jimp.FONT_SANS_64_WHITE).then(font => {
             image.print(font, 10, 10, "TEST MESSAGE");
             // image.print(
             //     font,
