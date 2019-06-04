@@ -22,16 +22,15 @@ exports.run = (client, message, args) => {
 
         Jimp.loadFont(Jimp.FONT_SANS_64_WHITE).then(font => {
             clone.print(font, 10, 10, "TEST MESSAGE");
-        });
 
-
-        clone.getBuffer(Jimp.MIME_PNG, function(err, buff) {
+            clone.getBuffer(Jimp.MIME_PNG, function(err, buff) {
             if (err) {
                 return;
             } else {
                 message.channel.send(new Attachment(buff, filename)).catch(console.error);
             }
         });
+        });   
         message.delete().catch(console.error);
     }).catch(function (err) {
         console.log(err);
