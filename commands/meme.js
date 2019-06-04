@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
 
         image.resize(width, height + 300);
 
-        Jimp.loadFont("https://fonts.googleapis.com/css?family=Sigmar+One&display=swap").then(font => {
+        Jimp.loadFont(Jimp.FONT_SANS_64_WHITE).then(font => {
             // load font from .fnt file
             image.print(font, 0, 0, "TEST MESSAGE");
         });
