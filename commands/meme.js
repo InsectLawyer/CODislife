@@ -12,30 +12,45 @@ exports.run = (client, message, args) => {
     if (attach[0] != null) {
         toRead = attach[0].url;
     }
+
     Jimp.read(toRead).then(function (image) {
-        let clone = image.clone();
         let filename = "MyMeme" + getRandomInt(1000) + ".png";
         let height = image.bitmap.height;
         let width = image.bitmap.width;
+        width = Math.max(width, Jimp.measureText(Jimp.FONT_SANS_128_WHITE, 'TEST MESSAGE'));
 
-        clone.resize(width, height + 300);
 
-        Jimp.loadFont(Jimp.FONT_SANS_64_WHITE).then(font => {
-            clone.print(font, 10, 10, "TEST MESSAGE");
 
-            clone.getBuffer(Jimp.MIME_PNG, function(err, buff) {
-            if (err) {
-                return;
-            } else {
-                message.channel.send(new Attachment(buff, filename)).catch(console.error);
-            }
+        new Jimp(height + 300, width, '#000000', (err, newImage) => {
+            newImage.composite(image, 0, 150);
+
+            Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(font => {
+                newImage.print(
+                    font,
+                    0,
+                    0,
+                    {
+                        text: 'WHO DID THIS',
+                        alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
+                        alignmentY: Jimp.VERTICAL_ALIGN_TOP
+                    }
+                );
+
+                newImage.getBuffer(Jimp.MIME_PNG, function(err, buff) {
+                    if (err) {
+                        return;
+                    } else {
+                        message.channel.send(new Attachment(buff, filename)).catch(console.error);
+                    }
+                });
+            });
+        }).catch(function (err) {
+            console.log(err);
         });
-        });   
+
+
         message.delete().catch(console.error);
     }).catch(function (err) {
         console.log(err);
     });
-    // }).catch(function (err) {
-    //     console.log(err);
-    // });
 }
