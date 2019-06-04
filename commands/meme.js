@@ -15,8 +15,8 @@ exports.run = (client, message, args) => {
     Jimp.read(toRead).then(function (image) {
         let clone = image.clone();
         let filename = "MyMeme" + getRandomInt(1000) + ".png";
-        //let height = image.bitmap.height;
-        //let width = image.bitmap.width;
+        let height = image.bitmap.height;
+        let width = image.bitmap.width;
 
         clone.resize(width, height + 300);
 
