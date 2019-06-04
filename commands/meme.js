@@ -19,6 +19,7 @@ exports.run = (client, message, args) => {
         let width = image.bitmap.width;
 
         image.resize(width, height + 300);
+        console.log(Jimp.FONT_SANS_64_WHITE);
 
         Jimp.loadFont("./node_modules/jimp/fonts/open-sans/open-sans-64-white/open-sans-64-white.fnt").then(font => {
             image.print(
@@ -26,10 +27,10 @@ exports.run = (client, message, args) => {
                 0,
                 0,
                 {
-                    text: 'TEST MESSAGE',
+                    text: "TEST MESSAGE",
                     alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
                     alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE
-                },
+                }
                 // maxWidth,
                 // maxHeight
             ); // prints 'Hello world!' on an image, middle and center-aligned, when x = 0 and y = 0
