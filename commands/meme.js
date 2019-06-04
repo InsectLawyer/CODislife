@@ -1,4 +1,6 @@
 exports.run = (client, message, args) => {
+    import("jimp");
+
     let Jimp = require("jimp");
     let Attachment = require('discord.js').Attachment;
 
