@@ -20,40 +20,35 @@ exports.run = (client, message, args) => {
         if (width < 750) width = 750;
 
         console.log("success preedit");
-        let newImage = new Jimp(height, width, '#000000', function(err, newImage) {
-            if (err) console.log(err);
-            if (err) throw err;
-        });
+        new Jimp(height, width, '#000000').then(newImage => {
+            console.log("Made new image");
+            newImage.composite(image, 0, 150);
+            Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(font => {
+                newImage.print(
+                    font,
+                    0,
+                    0,
+                    {
+                        text: 'WHO DID THIS',
+                        alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
+                        alignmentY: Jimp.VERTICAL_ALIGN_TOP
+                    }
+                );
+                console.log("printed text");
 
-        console.log("Made new image");
-        newImage.composite(image, 0, 150);
-        Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(font => {
-            newImage.print(
-                font,
-                0,
-                0,
-                {
-                    text: 'WHO DID THIS',
-                    alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
-                    alignmentY: Jimp.VERTICAL_ALIGN_TOP
-                }
-            );
-            console.log("printed text");
-
-            newImage.getBuffer(Jimp.MIME_PNG, function(err, buff) {
-                if (err) {
-                    return;
-                } else {
-                    message.channel.send(new Attachment(buff, filename)).catch(console.error);
-                }
+                newImage.getBuffer(Jimp.MIME_PNG, function(err, buff) {
+                    if (err) {
+                        return;
+                    } else {
+                        message.channel.send(new Attachment(buff, filename)).catch(console.error);
+                    }
+                });
+            }).catch(function (err) {
+                console.log(err);
             });
-        }).catch(function (err) {
-            console.log(err);
         });
-
-
         message.delete().catch(console.error);
     }).catch(function (err) {
         console.log(err);
     });
-}
+};
