@@ -21,19 +21,20 @@ exports.run = (client, message, args) => {
         image.resize(width, height + 300);
         console.log(Jimp.FONT_SANS_64_WHITE);
 
-        Jimp.loadFont("./node_modules/jimp/fonts/open-sans/open-sans-64-white/open-sans-64-white.fnt").then(font => {
-            image.print(
-                font,
-                0,
-                0,
-                {
-                    text: "TEST MESSAGE",
-                    alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
-                    alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE
-                }
+        Jimp.loadFont("../node_modules/jimp/fonts/open-sans/open-sans-64-white/open-sans-64-white.fnt").then(font => {
+            image.print(font, 10, 10, "TEST MESSAGE");
+            // image.print(
+            //     font,
+            //     0,
+            //     0,
+            //     {
+            //         text: "TEST MESSAGE",
+            //         alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
+            //         alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE
+            //     }
                 // maxWidth,
                 // maxHeight
-            ); // prints 'Hello world!' on an image, middle and center-aligned, when x = 0 and y = 0
+            // ); // prints 'Hello world!' on an image, middle and center-aligned, when x = 0 and y = 0
         });
 
 
