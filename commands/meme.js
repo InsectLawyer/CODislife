@@ -1,5 +1,4 @@
 exports.run = (client, message, args) => {
-    import("jimp");
 
     let Jimp = require("jimp");
     let Attachment = require('discord.js').Attachment;
@@ -21,9 +20,19 @@ exports.run = (client, message, args) => {
 
         image.resize(width, height + 300);
 
-        Jimp.loadFont(Jimp.FONT_SANS_64_WHITE).then(font => {
-            // load font from .fnt file
-            image.print(font, 0, 0, "TEST MESSAGE");
+        Jimp.loadFont("./node_modules/jimp/fonts/open-sans/open-sans-64-white/open-sans-64-white.fnt").then(font => {
+            image.print(
+                font,
+                0,
+                0,
+                {
+                    text: 'TEST MESSAGE',
+                    alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
+                    alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE
+                },
+                // maxWidth,
+                // maxHeight
+            ); // prints 'Hello world!' on an image, middle and center-aligned, when x = 0 and y = 0
         });
 
 
