@@ -31,7 +31,7 @@ exports.run = (client, message, args) => {
                     0,
                     0,
                     {
-                        text: 'WHO DID THIS',
+                        text: "WHO DID THIS",
                         alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
                         alignmentY: Jimp.VERTICAL_ALIGN_TOP
                     }
