@@ -27,15 +27,15 @@ exports.run = (client, message, args) => {
             newImage.composite(image, 0, 150);
             console.log("composited");
             Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(font => {
-                newImage.print(font, 0, 0,
-                     {
-                        "WHO DID THIS",
-                        Jimp.HORIZONTAL_ALIGN_CENTER,
-                        Jimp.VERTICAL_ALIGN_TOP
-                    },
-                    width,
-                    150
-                );
+                newImage.print(font, 0, 0, "WHO DID THIS"); 
+                     //{
+                        //"WHO DID THIS",
+                        //Jimp.HORIZONTAL_ALIGN_CENTER,
+                        //Jimp.VERTICAL_ALIGN_TOP
+                    //},
+                    //width,
+                    //150
+                //);
                 console.log("printed text");
 
                 newImage.getBuffer(Jimp.MIME_PNG, function(err, buff) {
