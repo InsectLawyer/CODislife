@@ -28,8 +28,8 @@ exports.run = (client, message, args) => {
             console.log("composited");
             Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(font => {
                 newImage.print(font, 0, 0,
-                    text: {
-                        text: "WHO DID THIS",
+                     {
+                        text: { text: "WHO DID THIS" },
                         alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER
                     },
                     width,
