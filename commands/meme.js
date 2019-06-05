@@ -26,7 +26,7 @@ exports.run = (client, message, args) => {
             console.log("Made new image");
             newImage.composite(image, 0, 150);
             console.log("composited");
-            Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(font => {
+            Jimp.loadFont(Jimp.FONT_SANS_64_WHITE).then(font => {
                 newImage.print(font, 0, 0, "WHO DID THIS"); 
                      //{
                         //"WHO DID THIS",
