@@ -17,15 +17,15 @@ exports.run = (client, message, args) => {
         let filename = "MyMeme" + getRandomInt(1000) + ".png";
         let height = image.bitmap.height + 300;
         let width = image.bitmap.width;
-        if (width < 750) width = 800;
+        if (width < 900) width = 900;
 
-        console.log("success preedit");
-        console.log(height);
-        console.log(width);
-        new Jimp(width, height, 0xff000000, (err, newImage) => {
-            console.log("Made new image");
+        //console.log("success preedit");
+        //console.log(height);
+        //console.log(width);
+        new Jimp(width, height, 0x00ff001C, (err, newImage) => {
+            //console.log("Made new image");
             newImage.composite(image, 0, 150);
-            console.log("composited");
+            //console.log("composited");
             Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(font => {
                 newImage.print(font, 0, 0, "WHO DID THIS"); 
                      //{
@@ -36,7 +36,7 @@ exports.run = (client, message, args) => {
                     //width,
                     //150
                 //);
-                console.log("printed text");
+                //console.log("printed text");
 
                 newImage.getBuffer(Jimp.MIME_PNG, function(err, buff) {
                     if (err) {
