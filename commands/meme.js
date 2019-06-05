@@ -17,16 +17,16 @@ exports.run = (client, message, args) => {
         let filename = "MyMeme" + getRandomInt(1000) + ".png";
         let height = image.bitmap.height + 300;
         let width = image.bitmap.width;
-        if (width < 750) width = 750;
+        if (width < 750) width = 800;
 
         console.log("success preedit");
         console.log(height);
         console.log(width);
-        new Jimp(width, height, 0x00000000, (err, newImage) => {
+        new Jimp(width, height, 0xff000000, (err, newImage) => {
             console.log("Made new image");
             newImage.composite(image, 0, 150);
             console.log("composited");
-            Jimp.loadFont(Jimp.FONT_SANS_64_WHITE).then(font => {
+            Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(font => {
                 newImage.print(font, 0, 0, "WHO DID THIS"); 
                      //{
                         //"WHO DID THIS",
