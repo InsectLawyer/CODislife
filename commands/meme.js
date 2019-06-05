@@ -34,7 +34,9 @@ exports.run = (client, message, args) => {
                         text: "WHO DID THIS",
                         alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
                         alignmentY: Jimp.VERTICAL_ALIGN_TOP
-                    }
+                    },
+                    width,
+                    150
                 );
                 console.log("printed text");
 
