@@ -22,7 +22,7 @@ exports.run = (client, message, args) => {
         //console.log("success preedit");
         //console.log(height);
         //console.log(width);
-        new Jimp(width, height, 0x000000ff (err, newImage) => {
+        new Jimp(width, height, 0x000000ff, (err, newImage) => {
             //console.log("Made new image");
             newImage.composite(image, 0, 150);
             //console.log("composited");
