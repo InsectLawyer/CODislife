@@ -25,15 +25,12 @@ exports.run = (client, message, args) => {
         new Jimp(width, height, 0x00000000, (err, newImage) => {
             console.log("Made new image");
             newImage.composite(image, 0, 150);
+            console.log("composited");
             Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(font => {
-                newImage.print(
-                    font,
-                    0,
-                    0,
+                newImage.print(font, 0, 0,
                     {
                         text: "WHO DID THIS",
-                        alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
-                        alignmentY: Jimp.VERTICAL_ALIGN_TOP
+                        alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER
                     },
                     width,
                     150
