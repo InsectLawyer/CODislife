@@ -29,8 +29,9 @@ exports.run = (client, message, args) => {
             Jimp.loadFont(Jimp.FONT_SANS_128_WHITE).then(font => {
                 newImage.print(font, 0, 0,
                      {
-                        text: { text: "WHO DID THIS" },
-                        alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER
+                        "WHO DID THIS",
+                        Jimp.HORIZONTAL_ALIGN_CENTER,
+                        Jimp.VERTICAL_ALIGN_TOP
                     },
                     width,
                     150
